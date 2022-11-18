@@ -47,6 +47,6 @@ const onConnection = (socket) => {
 
 io.on("connection", onConnection);
 
-server.listen(2345, () => {
-  console.log("listening on *:2345");
+server.listen(process.env.PORT || 2345, () => {
+  console.log(`listening on *:${process.env.PORT || 2345}`);
 });

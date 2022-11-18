@@ -4,8 +4,10 @@ dotenv.config();
 const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
+
 const { Server } = require("socket.io");
 const io = new Server(server);
+io.set("transports", ["websocket"]);
 
 const redis = require("./utils/redisclient");
 const redisClient = redis.getClient();
